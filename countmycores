@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+from subprocess import check_output
+
+cores = 0
+
+qstat = check_output("qstatme", shell=True)
+
+for line in qstat.splitlines():
+    split = line.split()
+    if len(split) != 11:
+        continue
+    if split[9] != "R":
+        continue
+    cores += int(split[6])
+
+print cores

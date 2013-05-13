@@ -1,0 +1,5 @@
+#!/bin/bash -l
+
+# delete all my jobs
+
+qstat | awk -v user=$(whoami) '{if ($3 == user) print $1}' | xargs -n 1 qdel

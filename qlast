@@ -1,0 +1,5 @@
+#!/bin/bash -l
+
+# print the jobid of the job I submitted last
+
+qstat | awk -v user=$(whoami) '{if ($3 == user) print $1}' | tail -n 1

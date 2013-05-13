@@ -1,0 +1,5 @@
+#!/bin/sh
+# ssh to $1, open terminal in current directory
+dir=$PWD
+ssh $1 -X -t "cd $dir; bash"
+

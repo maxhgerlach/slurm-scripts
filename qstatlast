@@ -1,0 +1,6 @@
+#!/bin/bash -l
+
+# Show information about the job I submitted last to the queue
+
+id=$(qstat | awk -v user=$(whoami) '{if ($3 == user) print $1}' | tail -n 1)
+qstat -f $id

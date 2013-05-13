@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ssh -Y mgerlac2@cheops.rrz "$@"

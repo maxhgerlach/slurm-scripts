@@ -1,0 +1,5 @@
+#!/bin/bash -l
+
+# Show info about my jobs in the queue
+
+qstat -u $(whoami)

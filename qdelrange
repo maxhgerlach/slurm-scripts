@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# run qdel for a number of $2 jobs with successively increasing ids
+# starting at $1
+
+let start=$1
+let end=$1+$2-1
+for id in $(seq -f '%.f' $start $end) 
+do
+    qdel $id
+done

@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+from subprocess import check_output
+from sys import argv
+import re
+
+jobid = argv[1]
+qstatf = check_output("qstat -f %s" % jobid, shell=True)
+m = re.search(r'exec_host = (cheops\d\d\d\d\d)/', qstatf)
+try:
+    node = m.group(1)
+    print node
+except:
+    print "Can't parse output of qstat -f %s" % jobid
+else:
+    if not re.match(r'\d+\..+', jobid):
+        jobid += '.cheops10'
+    print check_output('ssh %s cat /var/spool/torque/spool/%s.OU' % (node, jobid), shell=True)
+

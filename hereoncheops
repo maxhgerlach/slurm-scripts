@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# ssh to cheops, open terminal in current directory, with gerlach
+# replaced by mgerlac2
+
+dir=${PWD//gerlach/mgerlac2}
+ssh mgerlac2@cheops.rrz -X -t "cd $dir; bash -l"
+

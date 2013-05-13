@@ -1,0 +1,3 @@
+#!/bin/bash -l
+export UNISONLOCALHOSTNAME=cheops
+unison-2.27 "$@"
