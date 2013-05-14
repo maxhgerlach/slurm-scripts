@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+from subprocess import check_output
+import re
+
+# print the full names of all my jobs
+
+qstat = check_output("qstatme", shell=True)
+
+for line in qstat.splitlines()[5:]: # first lines are header 
+    split = line.split()
+    if len(split) != 11:
+        continue
+    jobid = split[0]
+    jobstate = split[9]
+    qstatf = check_output("qstat -f %s" % jobid, shell=True)
+    m = re.search(r'Job_Name = (.*)$', qstatf, re.MULTILINE)
+    if m:
+        jobname = m.group(1)
+    else:
+        jobname = "--ERROR--"
+    print "%s  %s  %s" % (jobid, jobstate, jobname)
+    
