@@ -3,6 +3,9 @@ from subprocess import check_output
 from sys import argv
 import re
 
+# pass a jobid as a command line argument
+# the current error output of the job is printed to standard out
+
 jobid = argv[1]
 qstatf = check_output("qstat -f %s" % jobid, shell=True)
 m = re.search(r'exec_host = (cheops\d\d\d\d\d)/', qstatf)
