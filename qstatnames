@@ -2,7 +2,7 @@
 from subprocess import check_output
 import re
 
-# print the full names of all my jobs
+# print the jobids, running states and *full names* of all my jobs
 
 qstat = check_output("qstatme", shell=True)
 
