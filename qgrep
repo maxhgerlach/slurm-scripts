@@ -1,0 +1,5 @@
+#!/bin/bash -l
+
+# grep from the names of your jobs and return a list of matching job ids
+
+qstatnames | grep "$@" | awk '{print $1}'

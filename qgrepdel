@@ -1,0 +1,6 @@
+#!/bin/bash -l
+
+# grep from the names of your jobs and delete all matching jobs
+
+qstatnames | grep "$@" | awk '{print $1}' | xargs -n 1 qdel
+
