@@ -12,7 +12,7 @@ To use these, download the scripts and put them into a directory in
 your `$PATH` like `~/bin/`, e.g.:
 
 ```
-cheops0:~$ wget -s https://github.com/maxhgerlach/cheops-scripts/archive/master.zip
+cheops0:~$ wget --no-check-certificate https://github.com/maxhgerlach/cheops-scripts/archive/master.zip
 cheops0:~$ unzip master
 cheops0:~$ mkdir ~/bin
 cheops0:~$ cd ~/bin
