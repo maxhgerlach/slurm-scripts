@@ -9,7 +9,16 @@ appears useful to you and adapt it to your needs.  If you feel like it,
 add your own contributions.
 
 To use these, download the scripts and put them into a directory in
-your `$PATH` like `~/bin/`.
+your `$PATH` like `~/bin/`, e.g.:
+
+```
+cheops0:~$ wget -s https://github.com/maxhgerlach/cheops-scripts/archive/master.zip
+cheops0:~$ unzip master
+cheops0:~$ mkdir ~/bin
+cheops0:~$ cd ~/bin
+cheops0:~/bin$ ln -s ~/cheops-scripts-master/* -t .
+cheops0:~$ rm master
+```
 
 ### qstatme
 
