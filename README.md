@@ -17,7 +17,7 @@ cheops0:~$ unzip master
 cheops0:~$ mkdir ~/bin
 cheops0:~$ cd ~/bin
 cheops0:~/bin$ ln -s ~/cheops-scripts-master/* -t .
-cheops0:~$ rm master
+cheops0:~$ rm ~/master
 ```
 
 ### qstatme
