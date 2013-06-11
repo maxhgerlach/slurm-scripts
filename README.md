@@ -31,7 +31,7 @@ ids. `qgrep -E REGEX` also works.
 ### qgrepdel
 
 Grep from the names of your jobs and delete all matching jobs.
-`qdelgrep -E REGEX` also works.
+`qgrepdel -E REGEX` also works.
 
 ### qpeekout, qpeekerr
 
