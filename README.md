@@ -8,6 +8,9 @@ make things slightly more enjoyable for some people.  Take what
 appears useful to you and adapt it to your need.  If you feel like it,
 add your own.
 
+To use these, download the scripts and put them into a directory in
+your `$PATH` like `~/bin/`.
+
 ### qstatme
 
 `qstat`, but only list your own jobs
