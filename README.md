@@ -12,12 +12,10 @@ To use these, download the scripts and put them into a directory in
 your `$PATH` like `~/bin/`, e.g.:
 
 ```
-cheops0:~$ wget --no-check-certificate https://github.com/maxhgerlach/cheops-scripts/archive/master.zip
-cheops0:~$ unzip master
+cheops0:~$ git clone https://github.com/maxhgerlach/cheops-scripts
 cheops0:~$ mkdir ~/bin
 cheops0:~$ cd ~/bin
-cheops0:~/bin$ ln -s ~/cheops-scripts-master/* -t .
-cheops0:~/bin$ rm -r ~/master
+cheops0:~/bin$ ln -s ~/cheops-scripts/* -t .
 ```
 
 ### qstatme
