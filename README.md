@@ -48,6 +48,13 @@ These print what has been written so far to the standard output or
 error stream of a job *while it is still running*.  With these scripts
 there is no need to specify any redirections in the job scripts.
 
+Johannes Helmes added an extra option to `qpeekout` to apply an arbitrary 
+command on the temporary output file.  For instance the following will
+only print the first 30 lines of jobid123's output:
+```
+qpeekout jobid123.cheops -c 'head -n 30'
+```
+
 ### qlast
 
 Print the jobid of the last job you have submitted.  This is useful
