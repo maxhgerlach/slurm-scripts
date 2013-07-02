@@ -32,7 +32,7 @@ of jobs in the queue.  Improvements are welcome.
 
 ### qtwins
 
-Prints the ids of all your jobs that have matching full names.
+Prints the ids of all your jobs that have identical full names.
 
 ### qgrep
 
