@@ -9,7 +9,14 @@ appears useful to you and adapt it to your needs.  If you feel like it,
 add your own contributions.
 
 To use these, download the scripts and put them into a directory in
-your `$PATH` like `~/bin/`.
+your `$PATH` like `~/bin/`, e.g.:
+
+```
+cheops0:~$ git clone http://github.com/maxhgerlach/cheops-scripts
+cheops0:~$ mkdir ~/bin
+cheops0:~$ cd ~/bin
+cheops0:~/bin$ ln -s ~/cheops-scripts/* -t .
+```
 
 ### qstatme
 
@@ -35,13 +42,20 @@ ids. `qgrep -E REGEX` also works.
 ### qgrepdel
 
 Grep from the names of your jobs and delete all matching jobs.
-`qdelgrep -E REGEX` also works.
+`qgrepdel -E REGEX` also works.
 
 ### qpeekout, qpeekerr
 
 These print what has been written so far to the standard output or
 error stream of a job *while it is still running*.  With these scripts
 there is no need to specify any redirections in the job scripts.
+
+Johannes Helmes added an extra option to `qpeekout` to apply an arbitrary 
+command on the temporary output file.  For instance the following will
+only print the first 30 lines of jobid123's output:
+```
+qpeekout jobid123.cheops -c 'head -n 30'
+```
 
 ### qlast
 
