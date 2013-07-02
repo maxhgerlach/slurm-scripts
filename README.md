@@ -23,6 +23,10 @@ prints the ids and full names of all your jobs.  Since for each job a
 separate call to `qstat` is made, this can be slow if you have a lot
 of jobs in the queue.  Improvements are welcome.
 
+### qtwins
+
+Prints the ids of all your jobs that have matching full names.
+
 ### qgrep
 
 Grep from the names of your jobs and return a list of matching job

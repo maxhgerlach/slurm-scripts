@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+from subprocess import check_output
+import re
+
+# print the jobids, running states and full names of all those jobs of
+# mine that share the same name
+
+qstat = check_output("qstatme", shell=True)
+
+ids = {}
+states = {}
+
+for line in qstat.splitlines()[5:]: # first lines are header 
+    split = line.split()
+    if len(split) != 11:
+        continue
+    jobid = split[0]
+    jobstate = split[9]
+    qstatf = check_output("qstat -f %s" % jobid, shell=True)
+    m = re.search(r'Job_Name = (.*)$', qstatf, re.MULTILINE)
+    if m:
+        jobname = m.group(1)
+    else:
+        jobname = "--ERROR--"
+    if not ids.has_key(jobname):
+        ids[jobname] = [jobid]
+        states[jobname] = [jobstate]
+    else:
+        ids[jobname].append(jobid)
+        states[jobname].append(jobstate)
+    
+for name in ids.keys():
+    if len(ids[name]) > 1:
+        print name
+        for id, state in zip(ids[name], states[name]):
+            print id, state
+        print
+
+    
