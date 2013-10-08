@@ -1,0 +1,5 @@
+#!/bin/bash -l
+
+# print the jobid of the job I submitted last
+
+squeue -u $(whoami) -o "%i" | tail -n +2 | tail -n 1
