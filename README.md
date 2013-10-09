@@ -16,8 +16,8 @@ cheops0:~$ cd ~/bin
 cheops0:~/bin$ ln -s ~/cheops-scripts/* -t .
 ```
 
-The folder `old-torque-scripts` contains some more involved scripts
-that were written for the previous installation of Torque/Maui.  These
+The folder `old-torque-scripts` contains some scripts
+that were written for the previous installation with the Torque/Maui scheduler.  These
 will not work any more, but since SLURM provides a lot of their
 functionality on its own, most of them are not really needed any more
 anyway.
