@@ -1,5 +1,5 @@
 #!/bin/bash -l
 
-# grep from the names / ids / states of your jobs and return a list of matching job ids
+# grep from the names / ids / states of your jobs cancel all matching jobs
 
 squeuenames | tail -n + 2 | grep "$@" | awk '{print $1}' | xargs -n 1 scancel
