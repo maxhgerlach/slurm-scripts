@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+from subprocess import check_output
+
+cores = 0
+
+qstat = check_output("sqmelong", shell=True)
+
+for line in qstat.splitlines():
+    split = line.split()
+    if len(split) != 10:
+        continue
+    if split[4] != "PD":
+        continue
+    cores += int(split[8])
+
+print cores

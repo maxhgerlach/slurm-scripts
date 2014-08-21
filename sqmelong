@@ -3,4 +3,4 @@
 # Show info about my jobs in the queue
 # output: default, but added number of CPUS
 
-squeue -u $(whoami) -o "%.8i %.9P %.8j %.8u %.2t %.19S %.10M %.6D %.6C" "$@"
+squeue -u $(whoami) -o "%.8i %.9P %.8j %.8u %.2t %.19S %.10M %.6D %.6C %R" "$@"
