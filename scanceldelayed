@@ -1,0 +1,9 @@
+#!/usr/bin/bash -l
+
+# Call scancel for each argument, sleep for a bit in between
+
+for job in "$@"
+do
+    scancel "$job"
+    sleep 30s
+done

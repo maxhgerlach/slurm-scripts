@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Show info about everybody's jobs in the queue
+# output: default, but added number of CPUS
+
+squeue -o "%.8i %.9P %.8j %.8u %.2t %.19S %.10M %.6D %.6C %R"

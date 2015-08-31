@@ -1,0 +1,11 @@
+#!/bin/bash -l
+
+# Cleanly tell detqmc* to abort for each job id argument, sleep for a
+# bit in between
+
+for job in "$@"
+do
+    echo ABORT."$job"
+    touch ABORT."$job"
+    sleep 30s
+done

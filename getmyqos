@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+import subprocess as sp
+import getpass as gp
+
+# output like:
+#
+#       User                  QOS 
+# ---------- -------------------- 
+#                          normal 
+#                          normal 
+#     hku222              lowcont 
+
+qos_output = sp.check_output("sacctmgr show assoc format=user,qos")
+
+user_name = gp.getuser()
+
+qos = "normal"
+
+for line in qos_output.splitlines():
+    words = line.split()
+    if words[0] == user_name:
+        qos = words[1]
+        break
+
+print qos
+    
+
