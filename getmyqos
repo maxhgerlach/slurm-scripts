@@ -10,7 +10,7 @@ import getpass as gp
 #                          normal 
 #     hku222              lowcont 
 
-qos_output = sp.check_output("sacctmgr show assoc format=user,qos")
+qos_output = sp.check_output("sacctmgr show assoc format=user,qos", shell=True)
 
 user_name = gp.getuser()
 
