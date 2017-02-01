@@ -1,0 +1,9 @@
+#!/bin/bash -l
+
+# Cleanly tell detqmc* to abort for each job id argument
+
+for job in "$@"
+do
+    echo ABORT."$job"
+    touch ABORT."$job"
+done
