@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# output: default, but append extra output flags to the default format string
+
+DEFAULT_OPTIONS="%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R"
+EXTRA_OPTIONS="$1"
+
+squeue -o "$DEFAULT_OPTIONS $EXTRA_OPTIONS"

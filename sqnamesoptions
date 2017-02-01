@@ -1,0 +1,5 @@
+#!/bin/bash
+
+EXTRA_OPTIONS="$1"
+
+squeue -o "%.18i %.2t %j $EXTRA_OPTIONS" -u $(whoami)

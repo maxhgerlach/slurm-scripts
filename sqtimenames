@@ -1,0 +1,3 @@
+#!/bin/bash
+
+squeue -o "%.12i %.2t %M %j" -u $(whoami)
